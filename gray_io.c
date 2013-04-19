@@ -95,7 +95,7 @@ gray_class* gray_class_read(char* file_name, int read_data)
       return NULL;
     }
     read_size = fread(gcl->data,data_size,1,fp);
-    if(read_size != data_size) {
+    if(read_size != 1) {
       error(0,errno,"Unexpected end of file");
       free(gcl);
       return NULL;
@@ -228,7 +228,7 @@ gray_dat* gray_dat_read(char* file_name, int read_data)
       return NULL;
     }
     read_size = fread(gda->data,data_size,1,fp);
-    if(read_size != data_size) {
+    if(read_size != 1) {
       error(0,errno,"Unexpected end of file");
       free(gda);
       return NULL;
