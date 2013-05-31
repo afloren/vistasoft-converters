@@ -90,7 +90,7 @@ gray_class* gray_class_read(char* file_name, int read_data)
     size_t read_size;
     data_size = sizeof(gray_class_data) * gcl->header.xsize * gcl->header.ysize * gcl->header.zsize;
     gcl->data = malloc(data_size);
-    if(gcl->data = NULL) {
+    if(gcl->data == NULL) {
       free(gcl);
       return NULL;
     }
@@ -176,7 +176,7 @@ gray_dat* gray_dat_new(int rows, int cols, int planes, int alloc_data)
   if(alloc_data) {
     size_t data_size = rows * cols * planes;
     gda->data = malloc(data_size);
-    if(gda->data = NULL) {
+    if(gda->data == NULL) {
       free(gda);
       return NULL;
     }
